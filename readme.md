@@ -16,9 +16,18 @@ Once you have something you want to take a look at:
 
 Ready for production?
 1. npm run build
+2. change the source of build.js from /build.js to assets/build.js
+
+The other script,
+```
+npm run watch
+```
+watches the files, like the dev server, but actually builds the build.js file.  
 
 ## Versioning
 * 1.0 - initial build and features
+* 1.0.1 - changed source for build.js and updated readme
+
 
 ## License
 GPL 3.0
