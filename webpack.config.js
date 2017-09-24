@@ -1,7 +1,9 @@
 var webpack = require('webpack');
 
-module.exports = {
-  entry: __dirname + '/src/index.js',
+module.exports =
+  {
+  devtool: 'eval-source-map',
+  entry: __dirname + '/src/index.jsx',
   output: {
     path: __dirname + '/public/assets',
     filename: 'bundle.js'
@@ -15,6 +17,14 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['env', 'stage-0', 'react']
+        }
+      },
+      {
+        test: /\.jsx$/,
         exclude: /(node_modules)/,
         loader: 'babel-loader',
         options: {
